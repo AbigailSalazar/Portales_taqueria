@@ -13,8 +13,42 @@ class MenuAtivity : AppCompatActivity() {
         var btnAntojitos:Button=findViewById(R.id.button_antojitos) as Button
 
         btnAntojitos.setOnClickListener {
-            var intent: Intent = Intent(this,ProductosActivity::class.java)
-            startActivity(intent)
+            cambiarPantalla("antojitos")
         }
+
+        var btnEspecialidades:Button=findViewById(R.id.button_especialidades) as Button
+
+        btnEspecialidades.setOnClickListener {
+            cambiarPantalla("especialidades")
+        }
+
+        var btnCombinations:Button=findViewById(R.id.button_combinations) as Button
+
+        btnCombinations.setOnClickListener {
+            cambiarPantalla("combinations")
+        }
+
+        var btnTortas:Button=findViewById(R.id.button_tortas) as Button
+
+        btnTortas.setOnClickListener {
+            cambiarPantalla("tortas")
+        }
+        var btnSopas:Button=findViewById(R.id.button_sopas) as Button
+
+        btnSopas.setOnClickListener {
+            cambiarPantalla("sopas")
+        }
+        var btnDrinks:Button=findViewById(R.id.button_drinks) as Button
+
+        btnDrinks.setOnClickListener {
+            cambiarPantalla("drinks")
+        }
+
+    }
+
+    fun cambiarPantalla(tipoMenu:String){
+        var intent: Intent = Intent(this,ProductosActivity::class.java)
+        intent.putExtra("menuTipo",tipoMenu)
+        startActivity(intent)
     }
 }
